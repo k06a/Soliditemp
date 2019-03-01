@@ -1,6 +1,7 @@
-pragma solidity ^0.5.2;
 
 // File: openzeppelin-solidity/contracts/ownership/Ownable.sol
+
+pragma solidity ^0.5.0;
 
 /**
  * @title Ownable
@@ -74,6 +75,10 @@ contract Ownable {
 }
 
 // File: contracts/Soliditemp.sol
+
+pragma solidity ^0.5.0;
+
+
 
 contract Soliditemp is Ownable {
 }
