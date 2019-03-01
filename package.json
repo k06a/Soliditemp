@@ -1,0 +1,40 @@
+{
+  "name": "Soliditemp",
+  "version": "0.0.1",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:k06a/Soliditemp.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "openzeppelin-solidity": "^2.1.2"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.3",
+    "eslint": "^5.13.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "ganache-cli": "^6.3.0",
+    "openzeppelin-test-helpers": "^0.1.2",
+    "solc": "^0.5.2",
+    "solidity-coverage": "^0.5.11",
+    "solium": "^1.2.3",
+    "truffle": "^5.0.3",
+    "truffle-flattener": "^1.2.12"
+  },
+  "scripts": {
+    "test": "scripts/test.sh",
+    "coverage": "scripts/coverage.sh",
+    "lint:js": "eslint .",
+    "lint:js:fix": "eslint . --fix",
+    "lint:sol": "solium -d .",
+    "lint:sol:fix": "solium -d . --fix",
+    "lint": "npm run lint:js && npm run lint:sol",
+    "lint:fix": "npm run lint:js:fix && npm run lint:sol:fix",
+    "dist": "truffle-flattener ./contracts/Soliditemp.sol > Soliditemp.full.sol && solcjs --bin --abi --optimize Soliditemp.full.sol && mv Soliditemp_full_sol_Soliditemp.bin Soliditemp.full.bin && mv Soliditemp_full_sol_Soliditemp.abi Soliditemp.full.abi && rm *_sol_*"
+  }
+}
